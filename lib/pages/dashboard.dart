@@ -81,40 +81,49 @@ class _DashboardState extends State<Dashboard> {
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(left: 10, top: 20),
-            child: Column(
-              children: [
-                Form(child: TextFormField()),
-                Container(
-                  width: 400,
-                  height: 300,
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Form(child: TextFormField()),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                  width: 450,
+                  height: 150,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      ListContainer('Awfa'),
-                      ListContainer('dey'),
-                      ListContainer('you sure'),
-                      ListContainer('I sure na'),
-                      ListContainer('Ok na'),
+                      ListContainer('assets/images/carousel-1.png'),
+                      ListContainer('assets/images/blue-bg-cable.png'),
+                      ListContainer('assets/images/green-bg-cable.png'),
                     ],
-                  )
-                ),
-                Row()
+              )),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Category', style: TextStyle(color: Colors.black, fontSize: 20)),
+                  Text('see all', style: TextStyle(color: Colors.blue,))
+                ],
+              )
             ]),
           ),
         ));
   }
 }
 
-Container ListContainer(String title){
+Container ListContainer(String imageName) {
   return Container(
-    height: 200,
-    width: 300,
+    height: 150,
+    width: 400,
     padding: EdgeInsets.all(50),
     margin: EdgeInsets.symmetric(horizontal: 10),
     decoration: BoxDecoration(
-      color: Colors.blue,
-      borderRadius: BorderRadius.circular(10)
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          image: AssetImage(imageName),
+          fit: BoxFit.contain
+        )
     ),
-    child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20),),
   );
 }
