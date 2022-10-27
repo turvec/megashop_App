@@ -50,35 +50,7 @@ class _DashboardState extends State<Dashboard> {
     //   ),
     // );
 
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Mega Mall',
-            style: TextStyle(
-                color: Colors.blue.shade700,
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-          backgroundColor: Colors.white,
-          centerTitle: true,
-          elevation: 0.5,
-          actions: [
-            Icon(
-              Icons.notifications_outlined,
-              color: Colors.black,
-              size: 20,
-            ),
-            SizedBox(
-              width: 18,
-            ),
-            Icon(
-              Icons.shopping_cart_outlined,
-              color: Colors.black,
-              size: 20,
-            ),
-          ],
-        ),
-        body: SingleChildScrollView(
+    return SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(left: 10, top: 20),
             child:
@@ -108,7 +80,7 @@ class _DashboardState extends State<Dashboard> {
               )
             ]),
           ),
-        ));
+        );
   }
 }
 
